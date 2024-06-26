@@ -88,49 +88,52 @@ const Home = () => {
         {/* Optional: Project Showcase or Video/GIF */}
       </div>
 
-    /* Contact Section */
-<div className="contact px-5 md:px-20 py-5">
-  <motion.h3
-    initial={{ y: -20, opacity: 0 }}
-    animate={{ y: 0, opacity: 1 }}
-    transition={{ duration: 1, delay: 0.5 }}
-    className="text-3xl md:text-4xl font-bold text-gray-800"
-  >
-    Let&apos;s Talk!
-  </motion.h3>
-  <motion.p
-    initial={{ y: -20, opacity: 0 }}
-    animate={{ y: 0, opacity: 1 }}
-    transition={{ duration: 1, delay: 0.7 }}
-    className="text-lg text-gray-600 mt-5"
-  >
-    I&apos;m always eager to collaborate on exciting projects. Reach out and tell me about your vision.
-  </motion.p>
-  <motion.a
-    whileHover={{ scale: 1.05 }}
-    initial={{ y: -20, opacity: 0 }}
-    animate={{ y: 0, opacity: 1 }}
-    transition={{ duration: 1, delay: 0.7 }}
-    className="bg-orange-500 text-white py-2 px-4 rounded-md mt-5 hover:bg-orange-700 inline-block"
-    href="https://wa.me/yourphonenumber" // Replace 'yourphonenumber' with the actual number
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Message Me
-  </motion.a>
+      {/* Contact Section */}
+      <div className="contact px-5 md:px-20 py-5">
+        <motion.h3
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="text-3xl md:text-4xl font-bold text-gray-800"
+        >
+          Let&apos;s Talk!
+        </motion.h3>
+        <motion.p
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.7 }}
+          className="text-lg text-gray-600 mt-5"
+        >
+          I&apos;m always eager to collaborate on exciting projects. Reach out and tell me about your vision.
+        </motion.p>
+        <motion.a
+          whileHover={{ scale: 1.05 }}
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.7 }}
+          className="bg-orange-500 text-white py-2 px-4 rounded-md mt-5 hover:bg-orange-700 inline-block"
+          href="https://wa.me/919074063723" // Replace 'yourphonenumber' with the actual number
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Message Me
+        </motion.a>
 
-  <motion.div initial={{ y: -20, opacity: 0 }}
-    animate={{ y: 0, opacity: 1 }}
-    transition={{ duration: 1, delay: 0.7 }} className="social mt-10 flex items-center justify-center md:justify-start w-full opacity-50">
-    <p className='font-light opacity-50'>Follow On</p>
-    <Link target="_blank" href="https://twitter.com/Hadi_Razal" >
-      <RiTwitterFill className="w-8 h-8 text-gray-600 hover:text-orange-500 ml-5" />
-    </Link>
-    <Link target="_blank" href="https://www.instagram.com/hadi_razal/" >
-      <RiInstagramFill className="w-8 h-8 text-gray-600 hover:text-orange-500 ml-5" />
-    </Link>
-  </motion.div>
-</div>
+        <motion.div
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.7 }}
+          className="social mt-10 flex items-center justify-center md:justify-start w-full opacity-50"
+        >
+          <p className='font-light opacity-50'>Follow On</p>
+          <Link target="_blank" href="https://twitter.com/Hadi_Razal" >
+            <RiTwitterFill className="w-8 h-8 text-gray-600 hover:text-orange-500 ml-5" />
+          </Link>
+          <Link target="_blank" href="https://www.instagram.com/hadi_razal/" >
+            <RiInstagramFill className="w-8 h-8 text-gray-600 hover:text-orange-500 ml-5" />
+          </Link>
+        </motion.div>
+      </div>
     </div>
   );
 };
