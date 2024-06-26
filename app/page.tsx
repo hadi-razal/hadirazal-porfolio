@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div className="container mx-auto">
       <Head>
-        <title>Hadi Razal - Full-Stack Developer &amp; Marketing Mastermind</title>
+        <title>Hadi Razal - Full-Stack Developer &amp; Marketing Specialist</title>
         <meta name="description" content="Hadi Razal is a skilled full-stack developer and marketing specialist who builds amazing digital experiences." />
         {/* Add more meta tags as needed */}
       </Head>
@@ -104,7 +104,7 @@ const Home = () => {
           transition={{ duration: 1, delay: 0.7 }}
           className="text-lg text-gray-600 mt-5"
         >
-          I'm always eager to collaborate on exciting projects. Reach out and tell me about your vision.
+          I&apos;m always eager to collaborate on exciting projects. Reach out and tell me about your vision.
         </motion.p>
         <motion.button
           whileHover={{ scale: 1.05 }}
