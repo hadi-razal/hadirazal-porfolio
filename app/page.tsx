@@ -4,6 +4,8 @@ import React from 'react';
 import { motion } from 'framer-motion'; // For animations
 import Head from 'next/head'; // For SEO and meta tags
 import Image from 'next/image'; // For responsive image handling
+import { RiInstagramFill, RiTwitterFill } from 'react-icons/ri';
+import Link from 'next/link';
 
 const Home = () => {
   return (
@@ -111,33 +113,14 @@ const Home = () => {
         >
           Message Me
         </motion.button>
-        <div className="social mt-10 flex justify-center md:justify-start">
-          <a href="https://twitter.com/Hadi_Razal" target="_blank" rel="noopener noreferrer">
-            <motion.svg
-              whileHover={{ scale: 1.2 }}
-              transition={{ duration: 0.3 }}
-              className="w-8 h-8 text-gray-600 hover:text-orange-500 ml-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M23 3a10.97 10.97 0 0 0-3.29 7.436A11.406 11.406 0 0 0 12 24.75c-3.182 0-6.02-1.174-8.27-3.289a10.97 10.97 0 0 0-7.436-3.29L3 3z"></path>
-            </motion.svg>
-          </a>
-          <a href="https://www.instagram.com/hadi_razal/" target="_blank" rel="noopener noreferrer">
-            <motion.svg
-              whileHover={{ scale: 1.2 }}
-              transition={{ duration: 0.3 }}
-              className="w-8 h-8 text-gray-600 hover:text-orange-500 ml-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M22 12c6.1 0 11-4.9 11-11 0-5.5-4.5-10-10-10s-10 4.5-10 10c0 6.1 4.9 11 11 11zM5 19a1 1 0 0 1-1-1H2a1 1 0 0 1 0-2h3a1 1 0 0 1 1 1zM12 15a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"></path>
-            </motion.svg>
-          </a>
+        <div className="social mt-10 flex justify-center md:justify-start w-full">
+          <p className='font-light'>Follow On</p>
+          <Link target="_blank" href="https://twitter.com/Hadi_Razal" >
+            <RiTwitterFill className="w-8 h-8 text-gray-600 hover:text-orange-500 ml-5" />
+          </Link>
+          <Link target="_blank" href="https://www.instagram.com/hadi_razal/" >
+            <RiInstagramFill className="w-8 h-8 text-gray-600 hover:text-orange-500 ml-5" />
+          </Link>
         </div>
       </div>
     </div>
