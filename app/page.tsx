@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from 'react';
 import { motion } from 'framer-motion'; // For animations
@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div className="container mx-auto">
       <Head>
-        <title>Hadi Razal - Full-Stack Developer & Marketing Mastermind</title>
+        <title>Hadi Razal - Full-Stack Developer &amp; Marketing Mastermind</title>
         <meta name="description" content="Hadi Razal is a skilled full-stack developer and marketing specialist who builds amazing digital experiences." />
         {/* Add more meta tags as needed */}
       </Head>
@@ -24,7 +24,7 @@ const Home = () => {
         <div className="image-container mb-10 md:mb-0 md:mr-10">
           <Image
             src="https://i.pinimg.com/originals/83/be/23/83be236f0528c6a867715f8c6f9f575f.jpg" // Replace with Hadi's headshot
-            alt="Hadi Razal - Full-Stack Developer & Marketing Mastermind"
+            alt="Hadi Razal - Full-Stack Developer &amp; Marketing Mastermind"
             width={300}
             height={300}
             className="rounded-full" // Apply rounded corners
@@ -45,7 +45,7 @@ const Home = () => {
             transition={{ duration: 1, delay: 0.7 }}
             className="text-2xl md:text-3xl text-gray-600 mt-2"
           >
-            Full-Stack Developer & Marketing Mastermind
+            Full-Stack Developer &amp; Marketing Specialist
           </motion.h2>
         </div>
       </motion.div>
@@ -75,11 +75,11 @@ const Home = () => {
           transition={{ duration: 1, delay: 0.9 }}
           className="skills mt-10"
         >
-          <h4 className="text-2xl md:text-3xl font-semibold text-gray-800">Skills & Expertise</h4>
+          <h4 className="text-2xl md:text-3xl font-semibold text-gray-800">Skills &amp; Expertise</h4>
           <ul className="list-disc ml-5 mt-5 text-gray-600">
-            <li>Full-Stack Development: React, Node.js, Express, MongoDB</li>
-            <li>Marketing Strategy & Execution</li>
-            <li>Content Creation & Branding</li>
+            <li>Full-Stack Software Development</li>
+            <li>Marketing Strategy &amp; Execution</li>
+            <li>Content Creation &amp; Branding</li>
             {/* Add more skills as needed */}
           </ul>
         </motion.div>
@@ -109,7 +109,7 @@ const Home = () => {
           transition={{ duration: 0.3 }}
           className="bg-orange-500 text-white py-2 px-4 rounded-md mt-10 hover:bg-orange-700"
         >
-          Get a Free Consultation
+          Message Me
         </motion.button>
         <div className="social mt-10 flex justify-center md:justify-start">
           <a href="https://twitter.com/Hadi_Razal" target="_blank" rel="noopener noreferrer">
