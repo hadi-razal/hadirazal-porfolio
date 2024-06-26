@@ -96,7 +96,7 @@ const Home = () => {
           transition={{ duration: 1, delay: 0.5 }}
           className="text-3xl md:text-4xl font-bold text-gray-800"
         >
-          Let's Talk!
+          Let&apos;s Talk!
         </motion.h3>
         <motion.p
           initial={{ y: -20, opacity: 0 }}
