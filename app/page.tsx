@@ -161,7 +161,7 @@ const Home = () => {
           >
             I&apos;m always eager to collaborate on exciting projects. Reach out and tell me about your vision.
           </motion.p>
-          <div className="flex flex-col gap-2 items-center md:flex-row md:items-center mt-5">
+          <div className="flex flex-wrap gap-2 items-center md:justify-start justify-center md:flex-row md:items-center mt-5">
             <motion.a
               whileHover={{ scale: 1.05 }}
               initial={{ y: -20, opacity: 0 }}
