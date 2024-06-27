@@ -19,6 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+
+        <link
+          rel="favicom"
+          href="/public/icon.ico"
+          type="image/<generated>"
+          sizes="<generated>"
+        />
         <link
           rel="apple-touch-icon"
           href="/public/apple-touch-icon.png"
