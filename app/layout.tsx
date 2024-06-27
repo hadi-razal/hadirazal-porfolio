@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 
@@ -18,7 +19,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/public/favicon.ico" sizes="any" />
         <link
           rel="apple-touch-icon"
           href="/public/apple-touch-icon.png"
@@ -27,6 +27,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${poppins.className}`}>
+        <Toaster />
         {children}
       </body>
     </html>
