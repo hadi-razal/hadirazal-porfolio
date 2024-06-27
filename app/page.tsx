@@ -66,7 +66,7 @@ const Home = () => {
         >
           <div className="image-container mb-5 md:mb-0 md:mr-10">
             <Image
-              src="https://i.pinimg.com/originals/83/be/23/83be236f0528c6a867715f8c6f9f575f.jpg" // Replace with Hadi's headshot
+              src="https://i.pinimg.com/originals/83/be/23/83be236f0528c6a867715f8c6f9f575f.jpg"
               alt="Hadi Razal - Full-Stack Developer"
               width={300}
               height={300}
