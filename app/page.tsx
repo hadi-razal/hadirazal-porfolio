@@ -65,13 +65,12 @@ const Home = () => {
           className="hero flex flex-col md:flex-row items-center justify-center py-10 px-5 md:px-20"
         >
           <div className=" image-container rounded-full mb-5 md:mb-0 md:mr-10">
-            <Image
+            <motion.img
               src="/hadi2.jpg"
-              sizes='center'
               alt="Hadi Razal - Full-Stack Developer"
-              width={400}
-              height={300}
-              className='rounded-[99px]'
+              className='rounded-[99999px]'
+              width={290}
+              height={350}
             />
           </div>
           <div className="text-container text-center md:text-left">

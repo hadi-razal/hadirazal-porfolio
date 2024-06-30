@@ -129,8 +129,7 @@ function replaceTemplatePlaceholders(html: string, data: EmailBody): string {
         .replace('{{buttonLink}}', data.buttonURL)
         .replace('{{buttonName}}', data.buttonContent)
         .replace('{{#each socialLinks}}', getSocialLinksHTML(data.socialLinks))
-        .replace('{{/each}}', '');
-}
+    }
 
 function getSocialLinksHTML(socialLinks: { name: string; url: string }[]): string {
     return socialLinks.map(link => `<a href="${link.url}" target="_blank">${link.name}</a>`).join('');
@@ -142,7 +141,7 @@ export async function POST(req: NextRequest) {
 
         if (!emails.length) {
             console.log('No subscribers found.');
-            return NextResponse.json({ success: false, message: 'No subscribers to send emails' });
+            return NextResponse.json({ success: false, message: 'No subscribers to send emails', status: 200 });
         }
 
         const transporter: Transporter = nodemailer.createTransport({

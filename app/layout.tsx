@@ -8,8 +8,9 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 export const metadata: Metadata = {
   title: "Hadi Razal | Software Developer",
   description: "Welcome to the portfolio of Hadi Razal, a dedicated software developer specializing in full-stack development, modern web technologies, and innovative solutions.",
-  keywords: "Hadi Razal, Software Developer, Full-Stack Developer, Web Development, Portfolio, JavaScript, React, Node.js, Next.js,firebase,supabase,mysql,typescript"
+  keywords: "Hadi Razal, Software Developer, Full-Stack Developer, Ponnai, Kerala, best software developer in Kerala, best developer, top developer in Kerala, top software developer in Kerala, best developers in Kerala, top developers in Kerala, Web Development, Portfolio, JavaScript, React, Node.js, Next.js, Firebase, Supabase, MySQL, TypeScript"
 };
+
 
 export default function RootLayout({
   children,
@@ -22,13 +23,11 @@ export default function RootLayout({
 
         <link
           rel="favicom"
-          href="/public/icon.ico"
-          type="image/<generated>"
-          sizes="<generated>"
+          href="/icon.ico"
         />
         <link
           rel="apple-touch-icon"
-          href="/public/apple-touch-icon.png"
+          href="/apple-touch-icon.png"
           type="image/<generated>"
           sizes="<generated>"
         />
