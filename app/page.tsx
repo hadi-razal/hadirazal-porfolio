@@ -27,15 +27,15 @@ const Home = () => {
         <meta name="description" content="Hadi Razal is a skilled full-stack developer who builds amazing digital experiences." />
         <meta name="keywords" content="Hadi Razal, full-stack developer, web developer, software engineer, React, Node.js, Next.js" />
         <meta name="author" content="Hadi Razal" />
-        <link rel="canonical" href="https://yourwebsite.com/" />
+        <link rel="canonical" href="https://hadirazal.in/" />
         <meta property="og:title" content="Hadi Razal - Full-Stack Developer" />
         <meta property="og:description" content="Hadi Razal is a skilled full-stack developer who builds amazing digital experiences." />
-        <meta property="og:image" content="https://i.pinimg.com/originals/83/be/23/83be236f0528c6a867715f8c6f9f575f.jpg" />
-        <meta property="og:url" content="https://yourwebsite.com/" />
+        <meta property="og:image" content="/hadi.jpg" />
+        <meta property="og:url" content="https://hadirazal.in/" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Hadi Razal - Full-Stack Developer" />
         <meta name="twitter:description" content="Hadi Razal is a skilled full-stack developer who builds amazing digital experiences." />
-        <meta name="twitter:image" content="https://i.pinimg.com/originals/83/be/23/83be236f0528c6a867715f8c6f9f575f.jpg" />
+        <meta name="twitter:image" content="/hadi.jpg" />
         <script type="application/ld+json">
           {`
           {
@@ -44,7 +44,7 @@ const Home = () => {
             "name": "Hadi Razal",
             "jobTitle": "Full-Stack Developer",
             "email": "hadhirasal22@gmail.com",
-            "image": "https://i.pinimg.com/originals/83/be/23/83be236f0528c6a867715f8c6f9f575f.jpg",
+            "image": "/hadi2.jpg",
             "url": "https://hadirazal.in",
             "sameAs": [
               "https://github.com/hadi-razal",
@@ -64,13 +64,14 @@ const Home = () => {
           transition={{ duration: 1 }}
           className="hero flex flex-col md:flex-row items-center justify-center py-10 px-5 md:px-20"
         >
-          <div className="image-container mb-5 md:mb-0 md:mr-10">
+          <div className=" image-container rounded-full mb-5 md:mb-0 md:mr-10">
             <Image
-              src="https://i.pinimg.com/originals/83/be/23/83be236f0528c6a867715f8c6f9f575f.jpg"
+              src="/hadi2.jpg"
+              sizes='center'
               alt="Hadi Razal - Full-Stack Developer"
-              width={300}
+              width={400}
               height={300}
-              className="rounded-full"
+              className='rounded-[99px]'
             />
           </div>
           <div className="text-container text-center md:text-left">
