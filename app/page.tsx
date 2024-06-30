@@ -10,7 +10,6 @@ import toast from 'react-hot-toast';
 
 const Home = () => {
 
-
   const handleCopyEmail = () => {
     try {
       navigator.clipboard.writeText("hadhirasal22@gmail.com");
@@ -64,8 +63,11 @@ const Home = () => {
           transition={{ duration: 1 }}
           className="hero flex flex-col md:flex-row items-center justify-center py-10 px-5 md:px-20"
         >
-          <div className=" image-container rounded-full mb-5 md:mb-0 md:mr-10">
+          <div className="image-container rounded-full mb-5 md:mb-0 md:mr-10">
             <motion.img
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
               src="/hadi2.jpg"
               alt="Hadi Razal - Full-Stack Developer"
               className='rounded-[99999px]'
@@ -144,6 +146,25 @@ const Home = () => {
           </motion.div>
         </section>
 
+        <section className="projects px-5 md:px-20 py-5">
+          <motion.h3
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="text-3xl md:text-4xl font-bold text-gray-800"
+          >
+            My Projects
+          </motion.h3>
+          <motion.p
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.7 }}
+            className="text-lg text-gray-600 mt-5"
+          >
+            I am currently building a SaaS marketing tool named Mail Motion. It is a mobile app designed to be easy to use and cost-effective, allowing users to send emails, WhatsApp messages, or SMS to their subscribers effortlessly. Mail Motion offers a variety of built-in templates and customizable options, making it a versatile tool for businesses of all sizes.
+          </motion.p>
+        </section>
+
         <section className="contact px-5 md:px-20 py-5">
           <motion.h3
             initial={{ y: -20, opacity: 0 }}
@@ -180,7 +201,7 @@ const Home = () => {
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 0.7 }}
-              href="https://github.com/hadi-razal" // Replace with your actual WhatsApp number
+              href="https://github.com/hadi-razal"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-bl from-[#274060] to-[#1B2845] text-white py-2 px-4 rounded-md hover:bg-gradient-to-l flex items-center transition-all duration-300 ease-in-out"
