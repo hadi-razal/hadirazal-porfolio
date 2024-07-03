@@ -3,10 +3,46 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
-import Image from 'next/image';
 import { RiGithubFill, RiLinkedinFill, RiTwitterFill, RiInstagramFill, RiWhatsappFill, RiFileDownloadFill } from 'react-icons/ri';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
+import { FaReact, FaNodeJs, FaPython, FaDocker, FaAws, FaLaravel, FaAngular, FaJs, FaPhp, FaWordpress, FaFigma, FaGitAlt } from 'react-icons/fa';
+import { SiNextdotjs, SiDjango, SiMongodb, SiPostgresql, SiFirebase, SiSupabase, SiMysql, SiKubernetes, SiJest, SiMocha, SiSelenium, SiVercel, SiNetlify, SiFlutter, SiTypescript } from 'react-icons/si';
+import Image from 'next/image';
+
+const skillsData = [
+  { name: "React", icon: <FaReact /> },
+  { name: "Next.js", icon: <SiNextdotjs /> },
+  { name: "Angular", icon: <FaAngular /> },
+  { name: "React Native", icon: <FaReact /> },
+  { name: "Node.js", icon: <FaNodeJs /> },
+  { name: "Django", icon: <SiDjango /> },
+  { name: "Express.js", icon: <FaNodeJs /> },
+  { name: "Laravel", icon: <FaLaravel /> },
+  { name: "Nest.js", icon: <FaNodeJs /> },
+  { name: "MongoDB", icon: <SiMongodb /> },
+  { name: "PostgreSQL", icon: <SiPostgresql /> },
+  { name: "Supabase", icon: <SiSupabase /> },
+  { name: "Firebase", icon: <SiFirebase /> },
+  { name: "MySQL", icon: <SiMysql /> },
+  { name: "Docker", icon: <FaDocker /> },
+  { name: "Kubernetes", icon: <SiKubernetes /> },
+  { name: "AWS", icon: <FaAws /> },
+  { name: "Jest", icon: <SiJest /> },
+  { name: "Mocha", icon: <SiMocha /> },
+  { name: "Selenium", icon: <SiSelenium /> },
+  { name: "Vercel", icon: <SiVercel /> },
+  { name: "Netlify", icon: <SiNetlify /> },
+  { name: "Heroku", icon: <SiNetlify /> },
+  { name: "Figma", icon: <FaFigma /> },
+  { name: "Photoshop", icon: <FaGitAlt /> },
+  { name: "JavaScript", icon: <FaJs /> },
+  { name: "TypeScript", icon: <SiTypescript /> },
+  { name: "PHP", icon: <FaPhp /> },
+  { name: "Python", icon: <FaPython /> },
+  { name: "WordPress", icon: <FaWordpress /> },
+  { name: "Flutter", icon: <SiFlutter /> },
+];
 
 const Home = () => {
 
@@ -134,18 +170,13 @@ const Home = () => {
             className="skills mt-5"
           >
             <h4 className="text-2xl md:text-3xl font-semibold text-gray-800">Skills &amp; Expertise</h4>
-            <ul className="list-disc ml-5 mt-5 text-gray-600 grid grid-cols-1 md:grid-cols-2 gap-2">
-              <li>Full-Stack Software Development</li>
-              <li>Frontend: React, Next.js, Angular</li>
-              <li>Backend: Node.js, Django, Express.js, Laravel, Nest.js</li>
-              <li>Database: MongoDB, PostgreSQL, Supabase, Firebase, MySQL</li>
-              <li>DevOps: Docker, Kubernetes, AWS</li>
-              <li>Testing: Jest, Mocha, Selenium</li>
-              <li>Deployment: Vercel, Netlify, Heroku</li>
-              <li>UI/UX Design: Figma, Photoshop</li>
-              <li>Programming Languages: JavaScript, TypeScript, PHP, Python</li>
-              <li>CMS: WordPress</li>
-              <li>Mobile Development: Flutter,React Native</li>
+            <ul className="list-disc ml-5 mt-5 text-gray-600 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {skillsData.map((skill, index) => (
+                <li key={index} className="flex items-center space-x-2">
+                  <span className="text-xl">{skill.icon}</span>
+                  <span>{skill.name}</span>
+                </li>
+              ))}
             </ul>
           </motion.div>
         </section>
