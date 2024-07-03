@@ -134,14 +134,18 @@ const Home = () => {
             className="skills mt-5"
           >
             <h4 className="text-2xl md:text-3xl font-semibold text-gray-800">Skills &amp; Expertise</h4>
-            <ul className="list-disc ml-5 mt-5 text-gray-600">
+            <ul className="list-disc ml-5 mt-5 text-gray-600 grid grid-cols-1 md:grid-cols-2 gap-2">
               <li>Full-Stack Software Development</li>
-              <li>Frontend: React, Next.js, Angular, React Native</li>
-              <li>Backend: Node.js, Django, Express.js</li>
+              <li>Frontend: React, Next.js, Angular</li>
+              <li>Backend: Node.js, Django, Express.js, Laravel, Nest.js</li>
               <li>Database: MongoDB, PostgreSQL, Supabase, Firebase, MySQL</li>
               <li>DevOps: Docker, Kubernetes, AWS</li>
               <li>Testing: Jest, Mocha, Selenium</li>
-              <li>Deployment: Vercel, Netlify</li>
+              <li>Deployment: Vercel, Netlify, Heroku</li>
+              <li>UI/UX Design: Figma, Photoshop</li>
+              <li>Programming Languages: JavaScript, TypeScript, PHP, Python</li>
+              <li>CMS: WordPress</li>
+              <li>Mobile Development: Flutter,React Native</li>
             </ul>
           </motion.div>
         </section>
@@ -172,77 +176,37 @@ const Home = () => {
             transition={{ duration: 1, delay: 0.5 }}
             className="text-3xl md:text-4xl font-bold text-gray-800"
           >
-            Let&apos;s Connect!
+            Let&apos;s Connect
           </motion.h3>
-          <motion.p
-            initial={{ y: -20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.7 }}
-            className="text-lg text-gray-600 mt-5"
-          >
-            I&apos;m always eager to collaborate on exciting projects. Reach out and tell me about your vision.
-          </motion.p>
-          <div className="flex flex-wrap gap-2 items-center md:justify-start justify-center md:flex-row md:items-center mt-5">
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              initial={{ y: -20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1, delay: 0.7 }}
-              href="https://wa.me/919074063723" // Replace with your actual WhatsApp number
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gradient-to-bl from-[#274060] to-[#1B2845] text-white py-2 px-4 rounded-md hover:bg-gradient-to-l flex items-center transition-all duration-300 ease-in-out"
-            >
-              <RiWhatsappFill className="w-6 h-6 mr-2" />
-              Message Me
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              initial={{ y: -20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1, delay: 0.7 }}
-              href="https://github.com/hadi-razal"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gradient-to-bl from-[#274060] to-[#1B2845] text-white py-2 px-4 rounded-md hover:bg-gradient-to-l flex items-center transition-all duration-300 ease-in-out"
-            >
-              <RiGithubFill className="w-6 h-6 mr-2" />
-              View Projects
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              initial={{ y: -20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1, delay: 0.7 }}
-              href="/HadiRazal.pdf"
-              download
-              className="bg-gradient-to-bl from-[#274060] to-[#1B2845] text-white py-2 px-4 rounded-md hover:bg-gradient-to-l flex items-center transition-all duration-300 ease-in-out"
-            >
-              <RiFileDownloadFill className="w-6 h-6 mr-2" />
-              Download CV
-            </motion.a>
-          </div>
           <motion.div
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.7 }}
-            className="social mt-10 flex items-center justify-center md:justify-start w-full"
+            className="social-icons flex justify-center md:justify-start mt-5 space-x-5 text-3xl text-gray-800"
           >
-            <p className='font-light opacity-50'>Follow On</p>
-            <Link target="_blank" href="https://www.linkedin.com/in/hadi-razal-690b22228/">
-              <RiLinkedinFill className="w-8 h-8 text-gray-600 hover:text-gradient-to-r from-orange-500 to-green-500 ml-5" />
+            <Link href="https://github.com/hadi-razal" target="_blank" rel="noopener noreferrer">
+              <RiGithubFill className="hover:text-blue-500 transition duration-300" />
             </Link>
-            <Link target="_blank" href="https://twitter.com/Hadi_Razal">
-              <RiTwitterFill className="w-8 h-8 text-gray-600 hover:text-gradient-to-r from-orange-500 to-green-500 ml-5" />
+            <Link href="https://www.linkedin.com/in/hadi-razal-690b22228/" target="_blank" rel="noopener noreferrer">
+              <RiLinkedinFill className="hover:text-blue-500 transition duration-300" />
             </Link>
-            <Link target="_blank" href="https://www.instagram.com/hadi_razal/">
-              <RiInstagramFill className="w-8 h-8 text-gray-600 hover:text-gradient-to-r from-orange-500 to-green-500 ml-5" />
+            <Link href="https://twitter.com/Hadi_Razal" target="_blank" rel="noopener noreferrer">
+              <RiTwitterFill className="hover:text-blue-500 transition duration-300" />
+            </Link>
+            <Link href="https://www.instagram.com/hadi_razal/" target="_blank" rel="noopener noreferrer">
+              <RiInstagramFill className="hover:text-blue-500 transition duration-300" />
+            </Link>
+            <Link href="https://wa.me/919526861717" target="_blank" rel="noopener noreferrer">
+              <RiWhatsappFill className="hover:text-blue-500 transition duration-300" />
+            </Link>
+            <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+              <RiFileDownloadFill className="hover:text-blue-500 transition duration-300" />
             </Link>
           </motion.div>
         </section>
       </main>
     </div>
   );
-};
+}
 
 export default Home;
