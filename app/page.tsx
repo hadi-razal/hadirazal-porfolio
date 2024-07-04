@@ -196,7 +196,7 @@ const Home = () => {
             <Link href="https://www.instagram.com/hadi_razal/" target="_blank" rel="noopener noreferrer">
               <RiInstagramFill className="hover:text-blue-500 transition duration-300" />
             </Link>
-            <Link href="https://wa.me/919526861717" target="_blank" rel="noopener noreferrer">
+            <Link href="https://wa.me/919074063723" target="_blank" rel="noopener noreferrer">
               <RiWhatsappFill className="hover:text-blue-500 transition duration-300" />
             </Link>
             <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
