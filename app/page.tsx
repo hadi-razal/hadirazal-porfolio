@@ -137,7 +137,7 @@ const Home = () => {
         </motion.div>
       </header>
 
-      <main>
+      <main className='flex flex-col items-center justify-center gap-3'>
         <section className="about px-3 md:px-10  w-full">
           <motion.h3
             initial={{ y: -20, opacity: 0 }}
@@ -162,7 +162,7 @@ const Home = () => {
           </motion.p>
         </section>
 
-        <section className="skills px-5 md:px-20 py-5">
+        <section className="skills px-3 md:px-10  w-full py-5">
           <motion.h3
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -190,7 +190,7 @@ const Home = () => {
           </motion.div>
         </section>
 
-        <section className="px-3 md:px-20 py-10">
+        <section className="px-3 md:px-10 w-full pb-10">
           <motion.h3
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -270,4 +270,5 @@ const Home = () => {
 }
 
 export default Home;
+
 
