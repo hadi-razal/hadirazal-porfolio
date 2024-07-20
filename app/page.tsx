@@ -3,10 +3,43 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
-import Image from 'next/image';
-import { RiGithubFill, RiLinkedinFill, RiTwitterFill, RiInstagramFill, RiWhatsappFill, RiFileDownloadFill } from 'react-icons/ri';
+import { RiGithubFill, RiLinkedinFill, RiTwitterFill, RiInstagramFill, RiWhatsappFill } from 'react-icons/ri';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
+import { FaReact, FaNodeJs, FaPython, FaDocker, FaAws, FaLaravel, FaAngular, FaJs, FaPhp, FaWordpress, FaFigma, FaGitAlt } from 'react-icons/fa';
+import { SiNextdotjs, SiDjango, SiMongodb, SiPostgresql, SiFirebase, SiSupabase, SiMysql, SiKubernetes, SiJest, SiMocha, SiSelenium, SiVercel, SiNetlify, SiFlutter, SiTypescript } from 'react-icons/si';
+import Image from 'next/image';
+
+const skillsData = [
+  { name: "React", icon: <FaReact /> },
+  { name: "Next.js", icon: <SiNextdotjs /> },
+  { name: "Angular", icon: <FaAngular /> },
+  { name: "React Native", icon: <FaReact /> },
+  { name: "Node.js", icon: <FaNodeJs /> },
+  { name: "Django", icon: <SiDjango /> },
+  { name: "Express.js", icon: <FaNodeJs /> },
+  { name: "MongoDB", icon: <SiMongodb /> },
+  { name: "PostgreSQL", icon: <SiPostgresql /> },
+  { name: "Supabase", icon: <SiSupabase /> },
+  { name: "Firebase", icon: <SiFirebase /> },
+  { name: "MySQL", icon: <SiMysql /> },
+  { name: "Docker", icon: <FaDocker /> },
+  { name: "Kubernetes", icon: <SiKubernetes /> },
+  { name: "AWS", icon: <FaAws /> },
+  // { name: "Jest", icon: <SiJest /> },
+  // { name: "Mocha", icon: <SiMocha /> },
+  // { name: "Selenium", icon: <SiSelenium /> },
+  // { name: "Vercel", icon: <SiVercel /> },
+  // { name: "Netlify", icon: <SiNetlify /> },
+  // { name: "Heroku", icon: <SiNetlify /> },
+  { name: "Figma", icon: <FaFigma /> },
+  { name: "JavaScript", icon: <FaJs /> },
+  { name: "TypeScript", icon: <SiTypescript /> },
+  { name: "PHP", icon: <FaPhp /> },
+  { name: "Python", icon: <FaPython /> },
+  { name: "WordPress", icon: <FaWordpress /> },
+  { name: "Git", icon: <FaGitAlt /> }
+];
 
 const Home = () => {
 
@@ -20,20 +53,20 @@ const Home = () => {
   }
 
   return (
-    <div className="container mx-auto pb-10">
+    <div className=" mx-auto">
       <Head>
-        <title>Hadi Razal - Full-Stack Developer</title>
-        <meta name="description" content="Hadi Razal is a skilled full-stack developer who builds amazing digital experiences." />
-        <meta name="keywords" content="Hadi Razal, full-stack developer, web developer, software engineer, React, Node.js, Next.js" />
+        <title>Hadi Razal - Software Developer & Founder of Duoph Technologies</title>
+        <meta name="description" content="Hadi Razal is a skilled full-stack developer and the founder of Duoph Technologies, building amazing digital experiences." />
+        <meta name="keywords" content="Hadi Razal, full-stack developer, web developer, software engineer, React, Node.js, Next.js, Duoph Technologies" />
         <meta name="author" content="Hadi Razal" />
         <link rel="canonical" href="https://hadirazal.in/" />
-        <meta property="og:title" content="Hadi Razal - Full-Stack Developer" />
-        <meta property="og:description" content="Hadi Razal is a skilled full-stack developer who builds amazing digital experiences." />
+        <meta property="og:title" content="Hadi Razal - Full-Stack Developer & Founder of Duoph Technologies" />
+        <meta property="og:description" content="Hadi Razal is a skilled full-stack developer and the founder of Duoph Technologies, building amazing digital experiences." />
         <meta property="og:image" content="/hadi.jpg" />
         <meta property="og:url" content="https://hadirazal.in/" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Hadi Razal - Full-Stack Developer" />
-        <meta name="twitter:description" content="Hadi Razal is a skilled full-stack developer who builds amazing digital experiences." />
+        <meta name="twitter:title" content="Hadi Razal - Full-Stack Developer & Founder of Duoph Technologies" />
+        <meta name="twitter:description" content="Hadi Razal is a skilled full-stack developer and the founder of Duoph Technologies, building amazing digital experiences." />
         <meta name="twitter:image" content="/hadi.jpg" />
         <script type="application/ld+json">
           {`
@@ -63,18 +96,17 @@ const Home = () => {
           transition={{ duration: 1 }}
           className="hero flex flex-col md:flex-row items-center justify-center py-10 px-5 md:px-20"
         >
-          <div className="image-container rounded-full mb-5 md:mb-0 md:mr-10">
+          <div className="image-container rounded-full mb-5 md:mb-0 md:mr-10 w-[290px] h-[290px] overflow-hidden flex items-center justify-center">
             <motion.img
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
               src="/hadi2.jpg"
               alt="Hadi Razal - Full-Stack Developer"
-              className='rounded-[99999px]'
-              width={290}
-              height={350}
+              className="rounded-full w-full h-full object-cover"
             />
           </div>
+
           <div className="text-container text-center md:text-left">
             <motion.h1
               initial={{ y: -20, opacity: 0 }}
@@ -90,7 +122,7 @@ const Home = () => {
               transition={{ duration: 1, delay: 0.7 }}
               className="text-2xl md:text-3xl text-gray-600 mt-2"
             >
-              Full-Stack Developer
+              Full-Stack Developer & Founder of Duoph Technologies
             </motion.h2>
             <motion.h6
               onClick={handleCopyEmail}
@@ -106,7 +138,7 @@ const Home = () => {
       </header>
 
       <main>
-        <section className="about px-5 md:px-20 py-5">
+        <section className="about px-3 md:px-10  w-full">
           <motion.h3
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -121,92 +153,121 @@ const Home = () => {
             transition={{ duration: 1, delay: 0.7 }}
             className="text-lg text-gray-600 mt-5"
           >
-            I am a passionate Full-Stack developer with a strong focus on creating impactful digital experiences. My expertise spans modern web technologies, including frontend frameworks like React, Next.js, Angular, and React Native, and backend development with Node.js, Django, and Express.js. I excel in designing intuitive user interfaces and optimizing user experiences, leveraging my skills in UI/UX design and proficiency in Figma and Photoshop.
+            I am a passionate Full-Stack developer and the founder of Duoph Technologies, a company based in Kochi, Kerala that provides services worldwide. My expertise spans modern web technologies, including frontend frameworks like React, Next.js, Angular, and React Native, and backend development with Node.js, Django, and Express.js. I excel in designing intuitive user interfaces and optimizing user experiences, leveraging my skills in UI/UX design and proficiency in Figma and Photoshop.
 
             Additionally, I specialize in database management using MongoDB, PostgreSQL, Supabase, Firebase, and MySQL, and I am proficient in DevOps practices with Docker, Kubernetes, and AWS. I ensure robust application performance through rigorous testing with Jest, Mocha, and Selenium, and streamline deployment using platforms like Vercel and Netlify.
 
-            Driven by a passion for innovation and a commitment to excellence, I thrive in collaborative environments where I can transform ideas into polished, high-impact digital solutions.
+            Driven by a passion for innovation and a commitment to excellence, I thrive in collaborative environments where I
+            can leverage my skills to build amazing digital experiences. As the founder of Duoph Technologies, I lead my team to deliver cutting-edge software solutions, ensuring that our clients receive top-notch service and outstanding results.
           </motion.p>
-          <motion.div
+        </section>
+
+        <section className="skills px-5 md:px-20 py-5">
+          <motion.h3
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="text-3xl md:text-4xl font-bold text-gray-800"
+          >
+            Skills
+          </motion.h3>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.7 }}
+            className="skills-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5 mt-5"
+          >
+            {skillsData.map((skill, index) => (
+              <div key={index} className="skill-item flex flex-col items-center">
+                <div className="skill-icon text-4xl text-blue-500 mb-2">
+                  {skill.icon}
+                </div>
+                <div className="skill-name text-gray-700 font-medium">
+                  {skill.name}
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </section>
+
+        <section className="px-3 md:px-20 py-10">
+          <motion.h3
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="text-3xl md:text-4xl font-bold text-gray-800"
+          >
+            My SaaS
+          </motion.h3>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.9 }}
-            className="skills mt-5"
+            className=" px-4 py-4 rounded-lg shadow-lg"
           >
-            <h4 className="text-2xl md:text-3xl font-semibold text-gray-800">Skills &amp; Expertise</h4>
-            <ul className="list-disc ml-5 mt-5 text-gray-600 grid grid-cols-1 md:grid-cols-2 gap-2">
-              <li>Full-Stack Software Development</li>
-              <li>Frontend: React, Next.js, Angular</li>
-              <li>Backend: Node.js, Django, Express.js, Laravel, Nest.js</li>
-              <li>Database: MongoDB, PostgreSQL, Supabase, Firebase, MySQL</li>
-              <li>DevOps: Docker, Kubernetes, AWS</li>
-              <li>Testing: Jest, Mocha, Selenium</li>
-              <li>Deployment: Vercel, Netlify, Heroku</li>
-              <li>UI/UX Design: Figma, Photoshop</li>
-              <li>Programming Languages: JavaScript, TypeScript, PHP, Python</li>
-              <li>CMS: WordPress</li>
-              <li>Mobile Development: Flutter,React Native</li>
-            </ul>
+            <div className="flex flex-col md:flex-row items-center">
+              {/* <div className="image-container rounded-full mb-4 md:mb-0 md:mr-6 w-[100px] h-[100px] overflow-hidden flex items-center justify-center">
+                <motion.img
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1 }}
+                  src="/image.jpg"
+                  alt="Hadi Razal - Full-Stack Developer"
+                  className="rounded-full w-full h-full object-cover"
+                />
+              </div> */}
+              <div>
+                <h4 className="text-2xl font-bold text-gray-800">Mail Motion</h4>
+                <p className="text-gray-600 mt-1">
+                  Mail Motion is an advanced AI-powered marketing tool designed specifically for business owners. It simplifies the process of promoting your products or services online by leveraging cutting-edge technology to automate and optimize your marketing efforts. With Mail Motion, you can easily create targeted email campaigns, generate compelling content, and analyze performance metrics—all from a single, intuitive platform.
+                </p>
+                <p className="text-gray-600 mt-2">
+                  Whether you are a small business looking to expand your reach or a larger enterprise aiming to streamline your marketing strategy, Mail Motion offers a cost-effective solution to enhance your online presence. Its user-friendly interface and intelligent algorithms ensure that your marketing efforts are both efficient and effective, helping you achieve better results with minimal effort.
+                </p>
+              </div>
+
+            </div>
           </motion.div>
+
         </section>
 
-        <section className="projects px-5 md:px-20 py-5">
-          <motion.h3
-            initial={{ y: -20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="text-3xl md:text-4xl font-bold text-gray-800"
-          >
-            My Projects
-          </motion.h3>
-          <motion.p
-            initial={{ y: -20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.7 }}
-            className="text-lg text-gray-600 mt-5"
-          >
-            I am currently building a SaaS marketing tool named Mail Motion. It is a mobile app designed to be easy to use and cost-effective, allowing users to send emails, WhatsApp messages, or SMS to their subscribers effortlessly. Mail Motion offers a variety of built-in templates and customizable options, making it a versatile tool for businesses of all sizes.
-          </motion.p>
-        </section>
 
-        <section className="contact px-5 md:px-20 py-5">
-          <motion.h3
-            initial={{ y: -20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="text-3xl md:text-4xl font-bold text-gray-800"
-          >
-            Let&apos;s Connect
-          </motion.h3>
-          <motion.div
-            initial={{ y: -20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.7 }}
-            className="social-icons flex justify-center md:justify-start mt-5 space-x-5 text-3xl text-gray-800"
-          >
-            <Link href="https://github.com/hadi-razal" target="_blank" rel="noopener noreferrer">
-              <RiGithubFill className="hover:text-blue-500 transition duration-300" />
-            </Link>
-            <Link href="https://www.linkedin.com/in/hadi-razal-690b22228/" target="_blank" rel="noopener noreferrer">
-              <RiLinkedinFill className="hover:text-blue-500 transition duration-300" />
-            </Link>
-            <Link href="https://twitter.com/Hadi_Razal" target="_blank" rel="noopener noreferrer">
-              <RiTwitterFill className="hover:text-blue-500 transition duration-300" />
-            </Link>
-            <Link href="https://www.instagram.com/hadi_razal/" target="_blank" rel="noopener noreferrer">
-              <RiInstagramFill className="hover:text-blue-500 transition duration-300" />
-            </Link>
-            <Link href="https://wa.me/919074063723" target="_blank" rel="noopener noreferrer">
-              <RiWhatsappFill className="hover:text-blue-500 transition duration-300" />
-            </Link>
-            <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-              <RiFileDownloadFill className="hover:text-blue-500 transition duration-300" />
-            </Link>
-          </motion.div>
-        </section>
       </main>
+
+      <footer className="px-5 md:px-20 py-10 pb-10 bg-gray-800 text-white">
+        <div className="footer-content flex flex-col md:flex-row justify-between items-center">
+          <div className="social-links flex space-x-4 mb-5 md:mb-0">
+            <Link target="_blank" href="https://github.com/hadi-razal">
+              <p className="text-2xl"><RiGithubFill /></p>
+            </Link>
+            <Link target="_blank" href="https://www.linkedin.com/in/hadi-razal-690b22228/">
+              <p className="text-2xl"><RiLinkedinFill /></p>
+            </Link>
+            <Link target="_blank" href="https://twitter.com/Hadi_Razal">
+              <p className="text-2xl"><RiTwitterFill /></p>
+            </Link>
+            <Link target="_blank" href="https://www.instagram.com/hadi_razal/">
+              <p className="text-2xl"><RiInstagramFill /></p>
+            </Link>
+            <Link target="_blank" href="https://wa.me/919846258522">
+              <p className="text-2xl"><RiWhatsappFill /></p>
+            </Link>
+          </div>
+          <div className="footer-text text-center md:text-left">
+            <p>&copy; 2024 Hadi Razal. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+      <style jsx>{`
+        .container {
+          max-width: 1200px;
+        }
+      `}</style>
     </div>
   );
 }
 
 export default Home;
+
