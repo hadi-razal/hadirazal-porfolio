@@ -6,10 +6,11 @@ import { Toaster } from "react-hot-toast";
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
-  title: "Hadi Razal | Software Developer",
-  description: "Welcome to the portfolio of Hadi Razal, a dedicated software developer specializing in full-stack development, modern web technologies, and innovative solutions.",
-  keywords: "Hadi Razal, Software Developer, Full-Stack Developer, Ponnai, Kerala, best software developer in Kerala, best developer, top developer in Kerala, top software developer in Kerala, best developers in Kerala, top developers in Kerala, Web Development, Portfolio, JavaScript, React, Node.js, Next.js, Firebase, Supabase, MySQL, TypeScript"
+  title: "Hadi Razal - Top Software Developer & Founder of Duoph Technologies in Kerala",
+  description: "Explore the portfolio of Hadi Razal, an accomplished software developer and founder of Duoph Technologies. Specializing in full-stack development, modern web technologies, and innovative solutions for businesses worldwide.",
+  keywords: "Hadi Razal, Software Developer, Full-Stack Developer, Ponnai, Kerala, Best Software Developer in Kerala, Top Developer in Kerala, Duoph Technologies, Web Development, JavaScript, React, Node.js, Next.js, Firebase, Supabase, MySQL, TypeScript, Portfolio, Innovative Solutions, Tech Expert"
 };
+
 
 
 export default function RootLayout({
@@ -21,16 +22,9 @@ export default function RootLayout({
     <html lang="en">
       <head>
 
-        <link
-          rel="favicom"
-          href="/icon.ico"
-        />
-        <link
-          rel="apple-touch-icon"
-          href="/apple-touch-icon.png"
-          type="image/<generated>"
-          sizes="<generated>"
-        />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        
       </head>
       <body className={`${poppins.className}`}>
         <Toaster />
@@ -39,3 +33,4 @@ export default function RootLayout({
     </html>
   );
 }
+
