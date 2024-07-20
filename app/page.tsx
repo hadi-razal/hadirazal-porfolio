@@ -250,7 +250,7 @@ const Home = () => {
             <Link target="_blank" href="https://www.instagram.com/hadi_razal/">
               <p className="text-2xl"><RiInstagramFill /></p>
             </Link>
-            <Link target="_blank" href="https://wa.me/919846258522">
+            <Link target="_blank" href="https://wa.me/919074963723">
               <p className="text-2xl"><RiWhatsappFill /></p>
             </Link>
           </div>
