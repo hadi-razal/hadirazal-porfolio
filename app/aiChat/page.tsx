@@ -6,11 +6,19 @@ import {
     HarmBlockThreshold,
 } from "@google/generative-ai";
 import { useState } from "react";
+import { IoMdArrowRoundBack } from "react-icons/io";
+import { useRouter } from 'next/navigation';
+
+
 
 const MODEL_NAME = "gemini-1.0-pro";
 const API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY as string;
 
 export default function AiChat() {
+
+    const router = useRouter()
+
+
     const [chatHistory, setChatHistory] = useState<{ prompt: string; response: string }[]>([]);
     const [prompt, setPrompt] = useState<string>("");
     const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -77,6 +85,13 @@ export default function AiChat() {
 
     return (
         <main className="realtive flex flex-col min-h-screen items-center text-white px-5 w-full md:px-10 lg:px-20">
+
+
+            <div className="absolute top-5 left-5 flex items-center cursor-pointer z-20" onClick={() => router.back()}>
+                <IoMdArrowRoundBack className="text-2xl text-gray-300" />
+                <p className="ml-2 text-lg text-gray-300 font-medium">Back</p>
+            </div>
+
             <div className="sticky top-0 bg-black z-10 w-full pb-5 flex flex-col items-center justify-center pt-5">
                 <h1 className="text-4xl font-bold mb-2">Chat with AI</h1>
 

@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import React from 'react';
 import { motion } from 'framer-motion';
@@ -8,7 +8,7 @@ import Link from 'next/link';
 import toast from 'react-hot-toast';
 import { FaReact, FaNodeJs, FaPython, FaDocker, FaAws, FaLaravel, FaAngular, FaJs, FaPhp, FaWordpress, FaFigma, FaGitAlt } from 'react-icons/fa';
 import { SiNextdotjs, SiDjango, SiMongodb, SiPostgresql, SiFirebase, SiSupabase, SiMysql, SiKubernetes, SiJest, SiMocha, SiSelenium, SiVercel, SiNetlify, SiFlutter, SiTypescript } from 'react-icons/si';
-import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const skillsData = [
   { name: "React", icon: <FaReact /> },
@@ -26,12 +26,6 @@ const skillsData = [
   { name: "Docker", icon: <FaDocker /> },
   { name: "Kubernetes", icon: <SiKubernetes /> },
   { name: "AWS", icon: <FaAws /> },
-  // { name: "Jest", icon: <SiJest /> },
-  // { name: "Mocha", icon: <SiMocha /> },
-  // { name: "Selenium", icon: <SiSelenium /> },
-  // { name: "Vercel", icon: <SiVercel /> },
-  // { name: "Netlify", icon: <SiNetlify /> },
-  // { name: "Heroku", icon: <SiNetlify /> },
   { name: "Figma", icon: <FaFigma /> },
   { name: "JavaScript", icon: <FaJs /> },
   { name: "TypeScript", icon: <SiTypescript /> },
@@ -43,6 +37,8 @@ const skillsData = [
 
 const Home = () => {
 
+  const router = useRouter()
+
   const handleCopyEmail = () => {
     try {
       navigator.clipboard.writeText("hadhirasal22@gmail.com");
@@ -53,7 +49,7 @@ const Home = () => {
   }
 
   return (
-    <div className=" mx-auto">
+    <div className="mx-auto">
       <Head>
         <title>Hadi Razal - Software Developer & Founder of Duoph Technologies</title>
         <meta name="description" content="Hadi Razal is a skilled full-stack developer and the founder of Duoph Technologies, building amazing digital experiences." />
@@ -89,12 +85,12 @@ const Home = () => {
         </script>
       </Head>
 
-      <header>
+      <header className="flex flex-col items-center justify-center py-10 px-5 md:px-20">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="hero flex flex-col md:flex-row items-center justify-center py-10 px-5 md:px-20"
+          className="hero flex flex-col md:flex-row items-center justify-center"
         >
           <div className="image-container rounded-full mb-5 md:mb-0 md:mr-10 w-[290px] h-[290px] overflow-hidden flex items-center justify-center">
             <motion.img
@@ -129,12 +125,40 @@ const Home = () => {
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 0.9 }}
-              className=" text-gray-600 mt-2 cursor-pointer"
+              className="text-gray-600 mt-2 cursor-pointer"
             >
               hadhirasal22@gmail.com
             </motion.h6>
           </div>
         </motion.div>
+
+
+
+        <motion.button
+          onClick={() => router.push("/aiChat")}
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.9 }}
+          className="relative inline-flex items-center justify-center px-6 py-3 font-medium text-white bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 border border-transparent rounded-lg overflow-hidden group shadow-lg hover:shadow-2xl transition-shadow duration-300 mt-5"
+        >
+          {/* Glowing effect */}
+          <span className="absolute inset-0 bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 rounded-full opacity-50 transform scale-125 group-hover:scale-150 transition-transform duration-500 ease-in-out blur-sm group-hover:blur-md group-hover:shadow-2xl"></span>
+
+          {/* Pulsing text */}
+          <span className="relative z-10">
+            <motion.span
+              initial={{ scale: 1 }}
+              animate={{ scale: [1, 1.1, 1] }}
+              transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
+              className="relative text-lg"
+            >
+              Chat With AI
+            </motion.span>
+          </span>
+        </motion.button>
+
+
+
       </header>
 
       <main className='flex flex-col items-center justify-center gap-3'>
@@ -259,16 +283,8 @@ const Home = () => {
           </div>
         </div>
       </footer>
-
-      <style jsx>{`
-        .container {
-          max-width: 1200px;
-        }
-      `}</style>
     </div>
   );
 }
 
 export default Home;
-
-
