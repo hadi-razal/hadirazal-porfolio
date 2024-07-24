@@ -10,16 +10,14 @@ import { useState } from "react";
 const MODEL_NAME = "gemini-1.0-pro";
 const API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY as string;
 
-interface ChatMessage {
-    role: "user" | "model";
-    text: string;
-}
-
-export default function Home() {
-    const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
+export default function AiChat() {
+    const [chatHistory, setChatHistory] = useState<{ prompt: string; response: string }[]>([]);
     const [prompt, setPrompt] = useState<string>("");
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
     async function runChat(prompt: string) {
+        setIsLoading(true);
+
         const genAI = new GoogleGenerativeAI(API_KEY);
         const model = genAI.getGenerativeModel({ model: MODEL_NAME });
 
@@ -49,19 +47,9 @@ export default function Home() {
             },
         ];
 
-        const chat = model.startChat({
+        const chat = await model.startChat({
             generationConfig,
             safetySettings,
-            history: [
-                {
-                    role: "user",
-                    parts: [{ text: "HELLO" }],
-                },
-                {
-                    role: "model",
-                    parts: [{ text: "Hello there! How can I assist you today?" }],
-                },
-            ],
         });
 
         const result = await chat.sendMessage(prompt);
@@ -69,54 +57,73 @@ export default function Home() {
 
         setChatHistory((prev) => [
             ...prev,
-            { role: "user", text: prompt },
-            { role: "model", text: response },
+            { prompt, response },
         ]);
+        setIsLoading(false);
     }
 
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (prompt.trim() === "") return;
-        runChat(prompt);
+        await runChat(prompt);
         setPrompt("");
     };
 
+    const formatResponse = (response: string) => {
+        return response.split('\n').filter(paragraph => paragraph).map((paragraph, index) => (
+            <p key={index} className="text-gray-400 mb-2">{paragraph}</p>
+        ));
+    };
+
     return (
-        <main className="flex min-h-screen max-h-screen flex-col items-center py-10 px-5 md:px-20">
-            <h1 className="text-3xl font-bold mb-8">Chat with AI</h1>
-            <form onSubmit={onSubmit} className="flex flex-col gap-4 w-full max-w-md">
-                <label htmlFor="prompt" className="text-gray-700">
-                    What can I help you with today?
-                </label>
-                <input
-                    type="text"
-                    id="prompt"
-                    placeholder="Ask me anything!"
-                    name="prompt"
-                    className="border border-gray-300 rounded-lg p-4 text-black"
-                    value={prompt}
-                    onChange={(e) => setPrompt(e.target.value)}
-                />
-                <button
-                    type="submit"
-                    className="bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700"
-                >
-                    Ask Bard
-                </button>
-            </form>
+        <main className="realtive flex flex-col min-h-screen items-center text-white px-5 w-full md:px-10 lg:px-20">
+            <div className="sticky top-0 bg-black z-10 w-full pb-5 flex flex-col items-center justify-center pt-5">
+                <h1 className="text-4xl font-bold mb-2">Chat with AI</h1>
+
+                <form onSubmit={onSubmit} className="flex flex-col items-center justify-center gap-4 w-full max-w-md rounded-lg shadow-md">
+                    <label htmlFor="prompt" className="text-gray-300">
+                        What can I help you with today?
+                    </label>
+                    <input
+                        type="text"
+                        id="prompt"
+                        placeholder="Ask me anything!"
+                        name="prompt"
+                        className="border w-full border-gray-300 rounded-lg p-4 text-black focus:outline-none"
+                        value={prompt}
+                        onChange={(e) => setPrompt(e.target.value)}
+                    />
+                    <button
+                        type="submit"
+                        className="bg-gray-800 w-full text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-900"
+                    >
+                        {isLoading ? "Generating..." : "Ask Bard "}
+                    </button>
+                </form>
+
+                {chatHistory.length > 0 && <h2 className="text-2xl font-bold py-2">Chat History</h2>}
+
+
+            </div>
+
+
+
             {chatHistory.length > 0 && (
-                <div className="mt-8 w-full max-w-md overflow-y-scroll">
-                    <h2 className="text-2xl font-bold mb-4">Chat History</h2>
-                    <div className="flex flex-col gap-4">
-                        {chatHistory.reverse().map((message, index) => (
+                <div className="mt-4 w-full rounded-lg shadow-md px-2 h-full" >
+                    <div className="flex flex-col-reverse gap-1 h-full">
+                        {chatHistory.map((message, index) => (
                             <div
                                 key={index}
-                                className={`p-4 rounded-lg ${message.role === "user" ? "bg-gray-200" : "bg-blue-100"
-                                    }`}
+                                className="p-2 h-full"
                             >
-                                <p className="text-gray-700">
-                                    <strong>{message.role === "user" ? "You" : "AI"}:</strong> {message.text}
+                                <p className="text-gray-400">
+                                    <strong>You : </strong>
+                                    {message.prompt}
                                 </p>
+                                <div className="text-gray-700">
+                                    <strong>AI : </strong>
+                                    {formatResponse(message.response)}
+                                </div>
                             </div>
                         ))}
                     </div>
