@@ -8,6 +8,7 @@ import {
 import { useState } from "react";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { useRouter } from 'next/navigation';
+import toast from "react-hot-toast";
 
 
 
@@ -72,7 +73,23 @@ export default function AiChat() {
 
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        if (prompt.trim() === "") return;
+        if (prompt.trim() === "") {
+            toast.error('Please enter a prompt to proceed.', {
+                duration: 4000,
+                position: 'bottom-center',
+                style: {
+                    background: 'linear-gradient(to right, #6e6e6e, #4e4e4e, #2e2e2e)',
+                    color: '#ffffff',
+                    borderRadius: '8px',
+                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
+                    fontSize: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    border: '1px solid #4e4e4e', // Match the button's border color
+                },
+            });
+            return;
+        }
         await runChat(prompt);
         setPrompt("");
     };
@@ -88,8 +105,8 @@ export default function AiChat() {
 
 
             <div className="absolute top-5 left-5 flex items-center cursor-pointer z-20" onClick={() => router.back()}>
-                <IoMdArrowRoundBack className="text-2xl text-gray-300" />
-                <p className="ml-2 text-lg text-gray-300 font-medium">Back</p>
+                <IoMdArrowRoundBack className="text-2xl text-gray-300 " />
+                <p className="ml-2 text-lg text-gray-300 font-medium hidden md:flex">Back</p>
             </div>
 
             <div className="sticky top-0 bg-black z-10 w-full pb-5 flex flex-col items-center justify-center pt-5">
@@ -112,7 +129,7 @@ export default function AiChat() {
                         type="submit"
                         className="bg-gray-800 w-full text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-900"
                     >
-                        {isLoading ? "Generating..." : "Ask Bard "}
+                        {isLoading ? "Generating..." : "Generate"}
                     </button>
                 </form>
 
