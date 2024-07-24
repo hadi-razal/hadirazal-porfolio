@@ -109,7 +109,7 @@ export default function AiChat() {
                 <p className="ml-2 text-lg text-gray-300 font-medium hidden md:flex">Back</p>
             </div>
 
-            <div className="sticky top-0 bg-black z-10 w-full pb-5 flex flex-col items-center justify-center pt-5">
+            <div className="sticky top-0 bg-black z-10 w-full pb-2 flex flex-col items-center justify-center pt-5">
                 <h1 className="text-4xl font-bold mb-2">Chat with AI</h1>
 
                 <form onSubmit={onSubmit} className="flex flex-col items-center justify-center gap-4 w-full max-w-md rounded-lg shadow-md">
@@ -127,13 +127,13 @@ export default function AiChat() {
                     />
                     <button
                         type="submit"
-                        className="bg-gray-800 w-full text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-900"
+                        className="bg-gray-800 w-full text-white font-bold py-3 px-4 rounded-lg hover:bg-gray-900"
                     >
                         {isLoading ? "Generating..." : "Generate"}
                     </button>
                 </form>
 
-                {chatHistory.length > 0 && <h2 className="text-2xl font-bold py-2">Chat History</h2>}
+                {chatHistory.length > 0 && <h2 className="text-2xl font-bold pt-2">Chat History</h2>}
 
 
             </div>
