@@ -95,16 +95,47 @@ export default function AiChat() {
     };
 
     const formatResponse = (response: string) => {
-        return response.split('\n').filter(paragraph => paragraph).map((paragraph, index) => (
-            <p key={index} className="text-gray-400 mb-2">{paragraph}</p>
-        ));
+        // Regular expression to match text within ** tags
+        const boldRegex = /\*\*(.*?)\*\*/g;
+
+        // Split into paragraphs and filter empty ones
+        const paragraphs = response.split('\n').filter(paragraph => paragraph);
+
+        // Format paragraphs with potential bold headings
+        const formattedParagraphs = paragraphs.map((paragraph, index) => {
+            const matches = paragraph.match(boldRegex);
+
+            if (matches) {
+                // Replace the matches with bold headings
+                const parts = paragraph.split(boldRegex).map((part, i) => (
+                    matches.includes(`**${part}**`)
+                        ? <strong key={i} className="">{part}{" "}</strong>
+                        : part
+                ));
+                return (
+                    <p key={index} className="text-gray-400 mb-2">
+                        {parts}
+                    </p>
+                );
+            } else {
+                return (
+                    <p key={index} className="text-gray-400 mb-2">
+                        {paragraph}
+                    </p>
+                );
+            }
+        });
+
+        return formattedParagraphs;
     };
+
+
 
     return (
         <main className="realtive flex flex-col min-h-screen items-center text-white px-5 w-full md:px-10 lg:px-20">
 
 
-            <div className="absolute top-5 left-5 flex items-center cursor-pointer z-20" onClick={() => router.back()}>
+            <div className="absolute top-5 left-5 flex items-center cursor-pointer z-20" onClick={() => router.push('/')}>
                 <IoMdArrowRoundBack className="text-2xl text-gray-300 " />
                 <p className="ml-2 text-lg text-gray-300 font-medium hidden md:flex">Back</p>
             </div>
