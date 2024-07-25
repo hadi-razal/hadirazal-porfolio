@@ -132,15 +132,18 @@ export default function AiChat() {
 
 
     return (
-        <main className="realtive flex flex-col min-h-screen items-center text-white px-5 w-full md:px-10 lg:px-20">
+        <main className="relative flex flex-col min-h-screen items-center text-white px-5 w-full md:px-10 lg:px-20">
 
 
-            <div className="absolute top-5 left-5 flex items-center cursor-pointer z-20" onClick={() => router.push('/')}>
-                <IoMdArrowRoundBack className="text-2xl text-gray-300 " />
-                <p className="ml-2 text-lg text-gray-300 font-medium hidden md:flex">Back</p>
-            </div>
 
             <div className="sticky top-0 bg-black z-10 w-full pb-2 flex flex-col items-center justify-center pt-5">
+
+                <div className="absolute top-7 left-0 flex items-center cursor-pointer z-20" onClick={() => router.push('/')}>
+                    <IoMdArrowRoundBack className="text-2xl text-gray-300 " />
+                    <p className="ml-2 text-lg text-gray-300 font-medium hidden md:flex">Back</p>
+                </div>
+
+
                 <h1 className="text-4xl font-bold mb-2">Chat with AI</h1>
 
                 <form onSubmit={onSubmit} className="flex flex-col items-center justify-center gap-4 w-full max-w-md rounded-lg shadow-md">
