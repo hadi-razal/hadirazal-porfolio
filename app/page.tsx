@@ -42,7 +42,20 @@ const Home = () => {
   const handleCopyEmail = () => {
     try {
       navigator.clipboard.writeText("hadhirasal22@gmail.com");
-      toast.success("Email copied to clipboard");
+      toast.success("Email copied to clipboard", {
+        duration: 4000,
+        position: 'top-center',
+        style: {
+          background: 'linear-gradient(to right, #6e6e6e, #4e4e4e, #2e2e2e)',
+          color: '#ffffff',
+          borderRadius: '8px',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
+          fontSize: '16px',
+          display: 'flex',
+          alignItems: 'center',
+          border: '1px solid #4e4e4e', 
+        },
+      });
     } catch (error) {
       console.log("Error copying email:", error);
     }

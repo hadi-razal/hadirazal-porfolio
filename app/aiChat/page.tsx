@@ -76,7 +76,7 @@ export default function AiChat() {
         if (prompt.trim() === "") {
             toast.error('Please enter a prompt to proceed.', {
                 duration: 4000,
-                position: 'bottom-center',
+                position: 'top-center',
                 style: {
                     background: 'linear-gradient(to right, #6e6e6e, #4e4e4e, #2e2e2e)',
                     color: '#ffffff',
