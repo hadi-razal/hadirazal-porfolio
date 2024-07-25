@@ -95,39 +95,63 @@ export default function AiChat() {
     };
 
     const formatResponse = (response: string) => {
-        // Regular expression to match text within ** tags
+        // Regular expressions to match text within ** tags and ``` code blocks
         const boldRegex = /\*\*(.*?)\*\*/g;
+        const codeBlockRegex = /```([\s\S]*?)```/g;
 
-        // Split into paragraphs and filter empty ones
-        const paragraphs = response.split('\n').filter(paragraph => paragraph);
+        // Initialize an array to hold formatted elements
+        const formattedElements: JSX.Element[] = [];
 
-        // Format paragraphs with potential bold headings
-        const formattedParagraphs = paragraphs.map((paragraph, index) => {
-            const matches = paragraph.match(boldRegex);
+        // Start index of the last match
+        let lastIndex = 0;
 
-            if (matches) {
-                // Replace the matches with bold headings
-                const parts = paragraph.split(boldRegex).map((part, i) => (
-                    matches.includes(`**${part}**`)
-                        ? <strong key={i} className="">{part}{" "}</strong>
-                        : part
-                ));
-                return (
-                    <p key={index} className="text-gray-400 mb-2">
-                        {parts}
-                    </p>
+        // Iterate over all matches of code blocks
+        let match;
+        while ((match = codeBlockRegex.exec(response)) !== null) {
+            // Add text before the current code block
+            if (lastIndex < match.index) {
+                const nonCodeText = response.substring(lastIndex, match.index);
+                const boldText = nonCodeText.split(boldRegex).map((part, i) =>
+                    i % 2 === 1 ? <strong key={i} className="block">{part}</strong> : part
                 );
-            } else {
-                return (
-                    <p key={index} className="text-gray-400 mb-2">
-                        {paragraph}
-                    </p>
-                );
+                formattedElements.push(<p key={formattedElements.length} className="text-gray-400 mb-2">{boldText}</p>);
             }
-        });
 
-        return formattedParagraphs;
+            // Add the code block with blue color
+            const codeContent = match[1];
+            const boldCodeContent = codeContent.split(boldRegex).map((part, i) =>
+                i % 2 === 1 ? <strong key={i} className="block text-blue-500">{part}</strong> : part
+            );
+            formattedElements.push(
+                <pre key={formattedElements.length} className="bg-white p-4 rounded mb-2">
+                    <code className="text-blue-500">{boldCodeContent}</code>
+                </pre>
+            );
+
+            // Update the index of the last match
+            lastIndex = codeBlockRegex.lastIndex;
+        }
+
+        // Add any remaining text after the last code block
+
+        if (lastIndex < response.length) {
+            const remainingText = response.substring(lastIndex);
+            const boldText = remainingText.split(boldRegex).map((part, i) =>
+            <>
+                {i % 2 === 1
+                    ? <strong key={i} className="block">{part}</strong>
+                    : part
+                }
+                {" "}
+            </>
+            );
+            formattedElements.push(<p key={formattedElements.length} className="text-gray-400 mb-2">{boldText}</p>);
+        }
+
+        return formattedElements;
     };
+
+
 
 
 
@@ -182,11 +206,11 @@ export default function AiChat() {
                                 key={index}
                                 className="p-2 h-full"
                             >
-                                <p className="text-gray-400">
+                                <p className="text-gray-200">
                                     <strong>You : </strong>
                                     {message.prompt}
                                 </p>
-                                <div className="text-gray-700">
+                                <div className="text-gray-200">
                                     <strong>AI : </strong>
                                     {formatResponse(message.response)}
                                 </div>
