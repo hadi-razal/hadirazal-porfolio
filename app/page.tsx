@@ -64,12 +64,12 @@ const Home = () => {
   return (
     <div className="mx-auto">
       <Head>
-        <title>Hadi Razal - Software Developer & Founder of Duoph Technologies</title>
+        <title>Hadi Razal - Software Developer</title>
         <meta name="description" content="Hadi Razal is a skilled full-stack developer and the founder of Duoph Technologies, building amazing digital experiences." />
         <meta name="keywords" content="Hadi Razal, full-stack developer, web developer, software engineer, React, Node.js, Next.js, Duoph Technologies" />
         <meta name="author" content="Hadi Razal" />
         <link rel="canonical" href="https://hadirazal.in/" />
-        <meta property="og:title" content="Hadi Razal - Full-Stack Developer & Founder of Duoph Technologies" />
+        <meta property="og:title" content="Hadi Razal - Full-Stack Developer" />
         <meta property="og:description" content="Hadi Razal is a skilled full-stack developer and the founder of Duoph Technologies, building amazing digital experiences." />
         <meta property="og:image" content="/hadi.jpg" />
         <meta property="og:url" content="https://hadirazal.in/" />
@@ -190,12 +190,12 @@ const Home = () => {
             transition={{ duration: 1, delay: 0.7 }}
             className="text-lg text-gray-600 mt-5"
           >
-            I am a passionate Full-Stack developer and the founder of Duoph Technologies, a company based in Kochi, Kerala that provides services worldwide. My expertise spans modern web technologies, including frontend frameworks like React, Next.js, Angular, and React Native, and backend development with Node.js, Django, and Express.js. I excel in designing intuitive user interfaces and optimizing user experiences, leveraging my skills in UI/UX design and proficiency in Figma and Photoshop.
+            I am a passionate Full-Stack developer working at Duoph Technologies, a company based in Kochi, Kerala that provides services worldwide. My expertise spans modern web technologies, including frontend frameworks like React, Next.js, Angular, and React Native, and backend development with Node.js, Django, and Express.js. I excel in designing intuitive user interfaces and optimizing user experiences, leveraging my skills in UI/UX design and proficiency in Figma and Photoshop.
 
             Additionally, I specialize in database management using MongoDB, PostgreSQL, Supabase, Firebase, and MySQL, and I am proficient in DevOps practices with Docker, Kubernetes, and AWS. I ensure robust application performance through rigorous testing with Jest, Mocha, and Selenium, and streamline deployment using platforms like Vercel and Netlify.
 
             Driven by a passion for innovation and a commitment to excellence, I thrive in collaborative environments where I
-            can leverage my skills to build amazing digital experiences. As the founder of Duoph Technologies, I lead my team to deliver cutting-edge software solutions, ensuring that our clients receive top-notch service and outstanding results.
+            can leverage my skills to build amazing digital experiences. As the lead developer of Duoph Technologies, I lead my team to deliver cutting-edge software solutions, ensuring that our clients receive top-notch service and outstanding results.
           </motion.p>
         </section>
 
