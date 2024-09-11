@@ -15,6 +15,9 @@ import toast from "react-hot-toast";
 const MODEL_NAME = "gemini-1.0-pro";
 const API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY as string;
 
+
+
+
 export default function AiChat() {
 
     const router = useRouter()
@@ -71,6 +74,8 @@ export default function AiChat() {
         setIsLoading(false);
     }
 
+
+
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (prompt.trim() === "") {
@@ -93,6 +98,8 @@ export default function AiChat() {
         await runChat(prompt);
         setPrompt("");
     };
+
+
 
     const formatResponse = (response: string) => {
         // Regular expressions to match text within ** tags and ``` code blocks
