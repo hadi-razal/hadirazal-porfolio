@@ -65,7 +65,7 @@ const Home = () => {
     <div className="mx-auto">
       <Head>
         <title>Hadi Razal - Software Developer</title>
-        <meta name="description" content="Hadi Razal is a skilled full-stack developer and the founder of Duoph Technologies, building amazing digital experiences." />
+        <meta name="description" content="Hadi Razal is a skilled full-stack developer" />
         <meta name="keywords" content="Hadi Razal, full-stack developer, web developer, software engineer, React, Node.js, Next.js, Duoph Technologies" />
         <meta name="author" content="Hadi Razal" />
         <link rel="canonical" href="https://hadirazal.in/" />
@@ -131,7 +131,7 @@ const Home = () => {
               transition={{ duration: 1, delay: 0.7 }}
               className="text-2xl md:text-3xl text-gray-600 mt-2"
             >
-              Full-Stack Developer & Founder of Duoph Technologies
+              Full-Stack Developer
             </motion.h2>
             <motion.h6
               onClick={handleCopyEmail}
