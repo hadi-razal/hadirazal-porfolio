@@ -121,9 +121,9 @@ const Home = () => {
             <p className="text-gray-300 leading-relaxed">
               As the lead developer at Duoph Technologies, I spearhead innovative projects that push the boundaries of web development. My expertise spans the full stack, from crafting intuitive user interfaces with React and Angular to building robust backend systems with Node.js and Django.
               
-              I'm passionate about creating seamless, high-performance applications that not only meet but exceed client expectations. My approach combines technical excellence with a keen eye for design, ensuring that every project I touch is both functionally powerful and visually stunning.
+              I&apos;m passionate about creating seamless, high-performance applications that not only meet but exceed client expectations. My approach combines technical excellence with a keen eye for design, ensuring that every project I touch is both functionally powerful and visually stunning.
               
-              When I'm not coding, you'll find me exploring the latest in tech, mentoring aspiring developers, or working on Mail Motion, my AI-powered marketing SaaS that's revolutionizing how businesses approach online promotion.
+              When I&apos;m not coding, you&apos;ll find me exploring the latest in tech, mentoring aspiring developers, or working on Mail Motion, my AI-powered marketing SaaS that&apos;s revolutionizing how businesses approach online promotion.
             </p>
           </motion.section>
         )}
@@ -170,48 +170,44 @@ const Home = () => {
                 <li>Automated email campaign creation</li>
                 <li>AI-driven content generation</li>
                 <li>Comprehensive analytics dashboard</li>
-                <li>Seamless integration with popular platforms</li>
+                <li>Seamless integration with CRM tools</li>
               </ul>
-              <motion.button
-                className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Learn More
-              </motion.button>
+              <Link href="https://github.com/hadi-razal" passHref>
+                <motion.button
+                  className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-full transition-colors duration-300 shadow-lg hover:shadow-xl"
+                >
+                  View on GitHub
+                </motion.button>
+              </Link>
             </div>
           </motion.section>
         )}
       </main>
 
-      <footer className="bg-gray-900 py-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center">
-          <div className="flex space-x-4 mb-4 sm:mb-0">
-            {[
-              { icon: <RiGithubFill />, link: "https://github.com/hadi-razal" },
-              { icon: <RiLinkedinFill />, link: "https://www.linkedin.com/in/hadi-razal-690b22228/" },
-              { icon: <RiTwitterFill />, link: "https://twitter.com/Hadi_Razal" },
-              { icon: <RiInstagramFill />, link: "https://www.instagram.com/hadi_razal/" },
-              { icon: <RiWhatsappFill />, link: "https://wa.me/919074963723" },
-            ].map((social, index) => (
-              <Link key={index} href={social.link} target="_blank" rel="noopener noreferrer">
-                <motion.div
-                  className="text-2xl text-gray-400 hover:text-blue-400 transition-colors"
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  {social.icon}
-                </motion.div>
-              </Link>
-            ))}
-          </div>
-          <div className="text-gray-400 text-sm">
-            © 2024 Hadi Razal. All rights reserved.
+      <footer className="bg-gray-800 py-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
+          <p className="mb-4">© 2024 Hadi Razal. All rights reserved.</p>
+          <div className="flex justify-center space-x-4">
+            <Link href="https://github.com/hadi-razal" passHref>
+              <RiGithubFill className="w-6 h-6 text-white hover:text-blue-400 transition-colors duration-200" />
+            </Link>
+            <Link href="https://linkedin.com/in/hadi-razal-690b22228" passHref>
+              <RiLinkedinFill className="w-6 h-6 text-white hover:text-blue-400 transition-colors duration-200" />
+            </Link>
+            <Link href="https://twitter.com/Hadi_Razal" passHref>
+              <RiTwitterFill className="w-6 h-6 text-white hover:text-blue-400 transition-colors duration-200" />
+            </Link>
+            <Link href="https://instagram.com/hadi_razal" passHref>
+              <RiInstagramFill className="w-6 h-6 text-white hover:text-blue-400 transition-colors duration-200" />
+            </Link>
+            <a href="https://wa.me/84834834249" target="_blank" rel="noopener noreferrer">
+              <RiWhatsappFill className="w-6 h-6 text-white hover:text-blue-400 transition-colors duration-200" />
+            </a>
           </div>
         </div>
       </footer>
     </div>
   );
-}
+};
 
 export default Home;
