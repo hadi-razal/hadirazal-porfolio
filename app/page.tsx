@@ -200,7 +200,7 @@ const Home = () => {
             <Link href="https://instagram.com/hadi_razal" passHref>
               <RiInstagramFill className="w-6 h-6 text-white hover:text-blue-400 transition-colors duration-200" />
             </Link>
-            <a href="https://wa.me/84834834249" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/+919074063723" target="_blank" rel="noopener noreferrer">
               <RiWhatsappFill className="w-6 h-6 text-white hover:text-blue-400 transition-colors duration-200" />
             </a>
           </div>
