@@ -22,6 +22,7 @@ const skillsData = [
   { name: "AWS", icon: <FaAws /> },
   { name: "TypeScript", icon: <SiTypescript /> },
   { name: "Python", icon: <FaPython /> },
+  
   { name: "Git", icon: <FaGitAlt /> }
 ];
 
