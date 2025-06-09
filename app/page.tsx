@@ -254,7 +254,7 @@ const Portfolio = () => {
             <div className="relative w-48 h-48 mx-auto mb-8">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-lg opacity-30"></div>
               <img
-                src="/hadi2.jpg"
+                src="/myphoto.jpg"
                 alt="Hadi Razal"
                 className="relative w-full h-full rounded-full object-cover border-4 border-white/20 shadow-2xl"
               />
