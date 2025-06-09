@@ -567,7 +567,7 @@ const Portfolio = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Let's{" "}
+              Let&apos;s{" "}
               <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 Connect
               </span>
@@ -576,7 +576,7 @@ const Portfolio = () => {
 
             <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
               Ready to discuss your next project or explore collaboration
-              opportunities? Let's build something amazing together.
+              opportunities? Let&apos;s build something amazing together.
             </p>
 
             <div className="flex flex-wrap justify-center gap-6 mb-12">
@@ -640,7 +640,7 @@ const Portfolio = () => {
                 Ready to Start a Project?
               </h3>
               <p className="text-gray-300 mb-6">
-                Let's discuss how we can bring your vision to life with
+                Let&apos;s discuss how we can bring your vision to life with
                 cutting-edge technology and innovative solutions.
               </p>
               <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl">
