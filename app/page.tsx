@@ -279,7 +279,7 @@ const Portfolio = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
           >
-            Founder of Duoph Technologies. Building enterprise-grade solutions
+           Freelance Developer. Building enterprise-grade solutions
             and SaaS platforms that optimize operations, boost productivity, and
             automate the future.
           </motion.p>
@@ -350,8 +350,7 @@ const Portfolio = () => {
                 Software Developer & Automation Expert
               </h3>
               <p className="text-gray-300 leading-relaxed mb-6">
-                I lead full-stack development and process automation at Duoph
-                Technologies. My solutions have been implemented by 10,000+
+                I lead full-stack and process automation developer. My solutions have been implemented by 10,000+
                 employees at a Top Company, including SharePoint intranet
                 portals, AI-powered HR FAQ bots, and comprehensive payroll
                 validation dashboards.
@@ -388,7 +387,7 @@ const Portfolio = () => {
                 <div className="flex items-center">
                   <Globe className="w-5 h-5 text-green-400 mr-3" />
                   <span className="text-gray-300">
-                    Duoph Technologies Founder
+                    Freelance Developer
                   </span>
                 </div>
               </div>
