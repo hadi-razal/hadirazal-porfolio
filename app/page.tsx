@@ -791,7 +791,7 @@ const Portfolio = () => {
             </div>
 
             <p className="text-2xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Ready to transform your vision into reality? Let's create something 
+              Ready to transform your vision into reality? Lets create something 
               <span className="text-cyan-400 font-semibold"> extraordinary</span> together.
             </p>
           </motion.div>
@@ -887,7 +887,7 @@ const Portfolio = () => {
                   </h3>
                   
                   <p className="text-white/80 mb-8 leading-relaxed">
-                    Let's discuss your project and explore how cutting-edge technology 
+                    Lets discuss your project and explore how cutting-edge technology 
                     can transform your business. Every great innovation starts with a conversation.
                   </p>
                 </div>
