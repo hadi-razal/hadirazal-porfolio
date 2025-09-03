@@ -35,12 +35,13 @@ import {
   Play,
   Pause,
   Volume2,
-  VolumeX
+  VolumeX,
+  User
 } from "lucide-react";
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState("hero");
-  const [isVisible, setIsVisible] = useState<any>({});
+  const [isVisible, setIsVisible] = useState({});
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isPlaying, setIsPlaying] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -167,12 +168,12 @@ const Portfolio = () => {
   ];
 
   const achievements = [
-    { icon: <Award />, title: "AI Innovation Award", desc: "Best ML Implementation 2024" },
-    { icon: <Star />, title: "Microsoft MVP", desc: "Power Platform Excellence" },
-    { icon: <Users />, title: "10k+ Users", desc: "Across Multiple Platforms" },
-    { icon: <TrendingUp />, title: "Fortune 500", desc: "Enterprise Solutions" },
-    { icon: <Rocket />, title: "100+ Projects", desc: "Successfully Delivered" },
-    { icon: <Heart />, title: "99% Satisfaction", desc: "Client Happiness Rate" }
+    { icon: <Award className="w-6 h-6" />, title: "AI Innovation Award", desc: "Best ML Implementation 2024" },
+    { icon: <Star className="w-6 h-6" />, title: "Microsoft MVP", desc: "Power Platform Excellence" },
+    { icon: <Users className="w-6 h-6" />, title: "10k+ Users", desc: "Across Multiple Platforms" },
+    { icon: <TrendingUp className="w-6 h-6" />, title: "Fortune 500", desc: "Enterprise Solutions" },
+    { icon: <Rocket className="w-6 h-6" />, title: "100+ Projects", desc: "Successfully Delivered" },
+    { icon: <Heart className="w-6 h-6" />, title: "99% Satisfaction", desc: "Client Happiness Rate" }
   ];
 
   const navItems = [
@@ -185,7 +186,7 @@ const Portfolio = () => {
 
   // Mouse tracking for interactive effects
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
@@ -211,7 +212,7 @@ const Portfolio = () => {
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        setIsVisible((prev: any) => ({
+        setIsVisible((prev) => ({
           ...prev,
           [entry.target.id]: entry.isIntersecting,
         }));
@@ -230,7 +231,7 @@ const Portfolio = () => {
     return () => observer.disconnect();
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -378,7 +379,7 @@ const Portfolio = () => {
         className="relative min-h-screen flex items-center justify-center px-6 pt-16 overflow-hidden"
       >
         {/* Interactive background grid */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.03"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.03\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
         
         <div className="max-w-6xl mx-auto text-center relative z-10">
           <motion.div
@@ -502,15 +503,15 @@ const Portfolio = () => {
               />
             </motion.button>
 
-            <motion.a
-              href="#contact"
+            <motion.button
+              onClick={() => scrollToSection("contact")}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="group px-8 py-4 border-2 border-white/20 rounded-full font-semibold hover:bg-white/10 hover:border-white/40 transition-all duration-300 backdrop-blur-sm"
             >
               <Mail className="inline-block mr-2 w-5 h-5" />
               Let's Connect
-            </motion.a>
+            </motion.button>
 
             <motion.a
               href="/resume.pdf"
@@ -541,7 +542,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Enhanced About Section */}
+      {/* Enhanced About Section - COMPLETION STARTS HERE */}
       <section id="about" className="py-20 px-6 relative">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -632,7 +633,7 @@ const Portfolio = () => {
                 </div>
                 <div className="flex items-center">
                   <Coffee className="w-5 h-5 text-orange-400 mr-3" />
-                  <span className="text-gray-300">Coffee Enthusiast ☕</span>
+                  <span className="text-gray-300">Coffee Enthusiast</span>
                 </div>
               </motion.div>
 
@@ -640,7 +641,7 @@ const Portfolio = () => {
                 whileHover={{ scale: 1.02 }}
                 className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 p-6 rounded-2xl border border-blue-500/30"
               >
-                <h4 className="font-bold mb-4 text-blue-400 text-xl">🏆 Key Achievements</h4>
+                <h4 className="font-bold mb-4 text-blue-400 text-xl">Key Achievements</h4>
                 <div className="space-y-3">
                   <div className="flex items-center">
                     <Star className="w-4 h-4 text-yellow-400 mr-2" />
@@ -665,12 +666,12 @@ const Portfolio = () => {
                 whileHover={{ scale: 1.02 }}
                 className="bg-gradient-to-br from-green-500/10 to-teal-500/10 p-6 rounded-2xl border border-green-500/30"
               >
-                <h4 className="font-bold mb-4 text-green-400 text-xl">💡 Current Focus</h4>
+                <h4 className="font-bold mb-4 text-green-400 text-xl">Current Focus</h4>
                 <div className="grid grid-cols-2 gap-3">
                   {["AI Integration", "SaaS Development", "Process Automation", "Cloud Architecture"].map((focus) => (
                     <motion.div
                       key={focus}
-                      whileHover={{ scale: 1.05 }}
+                      whileHover={{ scale: 1.1 }}
                       className="px-3 py-2 bg-green-500/20 rounded-lg text-sm text-center text-green-300"
                     >
                       {focus}
@@ -729,7 +730,7 @@ const Portfolio = () => {
               whileInView={{ opacity: 1 }}
               className="inline-block px-4 py-2 bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-full text-sm text-purple-300 mb-4"
             >
-              ⚡ Technical Expertise
+              Technical Expertise
             </motion.span>
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
               Skills &{" "}
@@ -824,7 +825,7 @@ const Portfolio = () => {
               whileInView={{ opacity: 1 }}
               className="inline-block px-4 py-2 bg-gradient-to-r from-green-500/10 to-teal-500/10 border border-green-500/20 rounded-full text-sm text-green-300 mb-4"
             >
-              🚀 Portfolio Showcase
+              Portfolio Showcase
             </motion.span>
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
               Featured{" "}
@@ -971,6 +972,145 @@ const Portfolio = () => {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="py-20 px-6 bg-gradient-to-br from-slate-800/30 to-slate-700/30">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <motion.span 
+              className="inline-block px-4 py-2 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 rounded-full text-sm text-yellow-300 mb-4"
+            >
+              Client Love
+            </motion.span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              What{" "}
+              <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+                Clients Say
+              </span>
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Sarah Johnson",
+                role: "CTO, TechCorp",
+                avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b302?w=100&h=100&fit=crop&crop=face",
+                text: "Hadi transformed our entire workflow automation. The AI solutions he built saved us 40+ hours per week!",
+                rating: 5
+              },
+              {
+                name: "Michael Chen",
+                role: "Founder, StartupXYZ",
+                avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+                text: "Incredible attention to detail and innovative approach. The SaaS platform exceeded all our expectations.",
+                rating: 5
+              },
+              {
+                name: "Emily Davis",
+                role: "VP Operations",
+                avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+                text: "Professional, efficient, and creative. Hadi delivered our project ahead of schedule with amazing results.",
+                rating: 5
+              }
+            ].map((testimonial, index) => (
+              <motion.div
+                key={testimonial.name}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.2 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="bg-gradient-to-br from-slate-800/50 to-slate-700/50 p-6 rounded-2xl border border-slate-600/50 backdrop-blur-sm"
+              >
+                <div className="flex items-center mb-4">
+                  <img
+                    src={testimonial.avatar}
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full mr-4 border-2 border-blue-500/30"
+                  />
+                  <div>
+                    <h4 className="font-semibold text-white">{testimonial.name}</h4>
+                    <p className="text-sm text-gray-400">{testimonial.role}</p>
+                  </div>
+                </div>
+                <div className="flex mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.5 + i * 0.1 }}
+                    >
+                      <Star className="w-5 h-5 text-yellow-400 fill-current" />
+                    </motion.div>
+                  ))}
+                </div>
+                <p className="text-gray-300 italic">"{testimonial.text}"</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Interactive Tech Stack Visualization */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.h3
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-2xl font-bold mb-12"
+          >
+            Interactive Tech Universe
+          </motion.h3>
+          
+          <div className="relative h-96 flex items-center justify-center">
+            {/* Central Node */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="absolute w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center font-bold text-white"
+            >
+              ME
+            </motion.div>
+
+            {/* Orbiting Tech Icons */}
+            {[
+              { name: "React", color: "text-blue-400", angle: 0 },
+              { name: "Node", color: "text-green-400", angle: 60 },
+              { name: "AI/ML", color: "text-purple-400", angle: 120 },
+              { name: "Cloud", color: "text-cyan-400", angle: 180 },
+              { name: "DB", color: "text-orange-400", angle: 240 },
+              { name: "Mobile", color: "text-pink-400", angle: 300 },
+            ].map((tech, index) => (
+              <motion.div
+                key={tech.name}
+                className={`absolute w-12 h-12 ${tech.color} rounded-full border-2 border-current flex items-center justify-center text-xs font-bold bg-slate-800`}
+                animate={{
+                  rotate: 360,
+                  x: Math.cos((tech.angle * Math.PI) / 180) * 120,
+                  y: Math.sin((tech.angle * Math.PI) / 180) * 120,
+                }}
+                transition={{
+                  duration: 15,
+                  repeat: Infinity,
+                  ease: "linear",
+                  delay: index * 0.5,
+                }}
+                whileHover={{ scale: 1.5, zIndex: 10 }}
+              >
+                {tech.name}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Enhanced Contact Section */}
       <section id="contact" className="py-20 px-6 bg-slate-800/30">
         <div className="max-w-6xl mx-auto">
@@ -986,7 +1126,7 @@ const Portfolio = () => {
               whileInView={{ opacity: 1 }}
               className="inline-block px-4 py-2 bg-gradient-to-r from-pink-500/10 to-red-500/10 border border-pink-500/20 rounded-full text-sm text-pink-300 mb-4"
             >
-              📫 Get In Touch
+              Get In Touch
             </motion.span>
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
               Let's{" "}
@@ -1098,6 +1238,85 @@ const Portfolio = () => {
         </div>
       </section>
 
+      {/* Final CTA with Particles */}
+      <section className="py-20 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10" />
+        
+        {/* Animated Particles Background */}
+        <div className="absolute inset-0">
+          {[...Array(30)].map((_, i) => (
+            <motion.div
+              key={`particle-${i}`}
+              className="absolute w-1 h-1 bg-blue-400 rounded-full opacity-30"
+              animate={{
+                x: [0, Math.random() * 400 - 200],
+                y: [0, Math.random() * 400 - 200],
+                opacity: [0.3, 0.8, 0.3],
+              }}
+              transition={{
+                duration: Math.random() * 10 + 5,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+            />
+          ))}
+        </div>
+
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.div
+              animate={{ rotate: [0, 360] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+              className="inline-block mb-6"
+            >
+              <Sparkles className="w-16 h-16 text-yellow-400" />
+            </motion.div>
+            
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+              Ready to{" "}
+              <span className="bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+                Innovate?
+              </span>
+            </h2>
+            
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              Let's create something extraordinary together. Your next breakthrough is just one conversation away.
+            </p>
+            
+            <motion.button
+              whileHover={{ 
+                scale: 1.05, 
+                boxShadow: "0 30px 60px rgba(59, 130, 246, 0.4)",
+                background: "linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899)"
+              }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => scrollToSection("contact")}
+              className="px-10 py-5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full font-bold text-lg shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 relative overflow-hidden"
+            >
+              <motion.span
+                animate={{ x: [-20, 20, -20] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="absolute inset-0 bg-white/20 skew-x-12"
+              />
+              <span className="relative z-10 flex items-center">
+                <Rocket className="mr-3 w-6 h-6" />
+                Start Your Project Today
+                <Sparkles className="ml-3 w-6 h-6" />
+              </span>
+            </motion.button>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Enhanced Footer */}
       <footer className="py-12 px-6 border-t border-slate-700/50 bg-slate-900/50">
         <div className="max-w-6xl mx-auto">
@@ -1198,3 +1417,53 @@ const Portfolio = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             className="fixed bottom-8 right-8 p-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full shadow-lg hover:shadow-2xl transition-all z-40"
+          >
+            <ArrowUp className="w-6 h-6" />
+          </motion.button>
+        )}
+      </AnimatePresence>
+
+      {/* Loading/Progress Indicator */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 origin-left z-50"
+        style={{ scaleX: scrollYProgress }}
+      />
+
+      {/* Ambient Sound Toggle */}
+      <motion.button
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2 }}
+        onClick={() => setIsPlaying(!isPlaying)}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="fixed bottom-8 left-8 p-4 bg-slate-800/50 backdrop-blur-sm rounded-full border border-slate-600/50 hover:border-slate-500/50 transition-all z-40"
+      >
+        {isPlaying ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+      </motion.button>
+
+      {/* Easter Egg: Hidden Konami Code Effect */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        {[...Array(5)].map((_, i) => (
+          <motion.div
+            key={`star-${i}`}
+            className="absolute w-1 h-1 bg-white rounded-full opacity-0"
+            animate={{
+              opacity: [0, 1, 0],
+              scale: [0, 1, 0],
+              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
+              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
+            }}
+            transition={{
+              duration: Math.random() * 3 + 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Portfolio;
