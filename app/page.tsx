@@ -265,6 +265,7 @@ const Portfolio = () => {
                     <Image
                       src="/myphoto.jpg"
                       alt="Hadi Razal"
+                      fill
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/20 via-transparent to-purple-500/20"></div>
