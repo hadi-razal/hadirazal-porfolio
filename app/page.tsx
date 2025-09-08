@@ -19,6 +19,7 @@ import {
   Heart,
   Sparkles
 } from "lucide-react";
+import Image from "next/image";
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState("hero");
@@ -261,7 +262,7 @@ const Portfolio = () => {
               <div className="absolute inset-0 bg-gradient-conic from-cyan-500 via-purple-500 to-pink-500 rounded-full p-1 animate-spin-slow">
                 <div className="w-full h-full bg-black rounded-full flex items-center justify-center">
                   <div className="w-44 h-44 rounded-full overflow-hidden border-4 border-white/20 relative">
-                    <img
+                    <Image
                       src="/myphoto.jpg"
                       alt="Hadi Razal"
                       className="w-full h-full object-cover"
@@ -668,7 +669,7 @@ const Portfolio = () => {
               CONNECT
             </h2>
             <p className="text-2xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Ready to embark on an extraordinary journey? Let's forge the future together and 
+              Ready to embark on an extraordinary journey? Lets forge the future together and 
               <span className="text-cyan-400 font-semibold"> create digital magic</span> that transcends boundaries.
             </p>
           </motion.div>
@@ -771,7 +772,7 @@ const Portfolio = () => {
                 </h3>
                 
                 <p className="text-xl text-white/80 mb-10 leading-relaxed">
-                  Every revolutionary idea begins with a single conversation. Let's discuss how we can 
+                  Every revolutionary idea begins with a single conversation. Lets discuss how we can 
                   transform your vision into a digital masterpiece that will be remembered for generations.
                 </p>
 
