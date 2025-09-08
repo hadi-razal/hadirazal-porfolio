@@ -26,6 +26,7 @@ import {
   Calendar,
   MapPin
 } from "lucide-react";
+import Image from "next/image";
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -181,7 +182,8 @@ const Portfolio = () => {
           >
             <div className="w-32 h-32 mx-auto mb-8 rounded-full overflow-hidden border-4 border-blue-200">
               <img
-                src="/api/placeholder/128/128"
+              
+                src="/myphoto.jpg"
                 alt="Hadi Razal"
                 className="w-full h-full object-cover"
               />
