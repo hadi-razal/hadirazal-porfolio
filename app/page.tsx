@@ -264,7 +264,7 @@ const Portfolio = () => {
               </p>
               <p className="text-gray-700 leading-relaxed">
                 My expertise spans across frontend and backend development, mobile applications, 
-                cloud architecture, and AI/ML integration. I'm passionate about leveraging artificial 
+                cloud architecture, and AI/ML integration. Im passionate about leveraging artificial 
                 intelligence and machine learning to create intelligent systems that enhance user experiences.
               </p>
               <p className="text-gray-700 leading-relaxed">
@@ -432,7 +432,7 @@ const Portfolio = () => {
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Featured Projects</h2>
             <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Showcasing some of the innovative solutions I've built
+              Showcasing some of the innovative solutions Ive built
             </p>
           </motion.div>
 
@@ -519,7 +519,7 @@ const Portfolio = () => {
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Get In Touch</h2>
             <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Let's discuss how we can bring your ideas to life with innovative technology solutions
+              Lets discuss how we can bring your ideas to life with innovative technology solutions
             </p>
           </motion.div>
 
@@ -577,7 +577,7 @@ const Portfolio = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Start a Project?</h3>
             <p className="text-gray-600 mb-6">
               Whether you need a web application, mobile app, or AI-powered solution, 
-              I'm here to help bring your vision to reality.
+              Im here to help bring your vision to reality.
             </p>
             <button
               onClick={() => window.open('mailto:hadirazal2745@gmail.com', '_blank')}
